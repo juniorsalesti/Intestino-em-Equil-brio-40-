@@ -35,13 +35,15 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({
           </span>
         </div>
 
-        <button
-          onClick={onCtaClick}
-          className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-[#16382B] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md active:scale-98"
+        <a
+          href={settings.checkoutUrlOffer1 || 'https://pay.kiwify.com.br/vHParcm'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-[#16382B] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md active:scale-98 cursor-pointer"
         >
           <span>QUERO COMEÇAR AGORA</span>
           <ArrowRight className="w-3.5 h-3.5 text-[#D8AF3B]" />
-        </button>
+        </a>
       </div>
     </div>
   );

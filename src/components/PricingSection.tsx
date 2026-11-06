@@ -184,13 +184,15 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               </div>
 
               {/* Action Button */}
-              <button
-                onClick={onSelectOffer1}
+              <a
+                href={settings.checkoutUrlOffer1 || 'https://pay.kiwify.com.br/vHParcm'}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 py-4 px-5 bg-white hover:bg-neutral-50 text-[#16382B] text-xs sm:text-sm font-bold tracking-wider uppercase rounded-xl border-2 border-[#16382B] transition-all shadow-xs hover:shadow-md active:scale-98 cursor-pointer"
               >
                 <span>QUERO LIVRO + BÔNUS</span>
                 <ArrowRight className="w-4 h-4 text-[#C59B27]" />
-              </button>
+              </a>
 
               <div className="flex items-center justify-center gap-3 text-[11px] text-neutral-500 pt-1">
                 <span className="flex items-center gap-1">
@@ -352,13 +354,15 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               </div>
 
               {/* Action Button */}
-              <button
-                onClick={onSelectOffer2}
+              <a
+                href={settings.checkoutUrlOffer2 || 'https://pay.kiwify.com.br/21iqdr2'}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2.5 py-4 px-6 bg-[#16382B] hover:bg-[#1f4e3c] text-white text-sm sm:text-base font-bold tracking-wider uppercase rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <span>QUERO O PACOTE COMPLETO</span>
                 <ArrowRight className="w-5 h-5 text-[#D8AF3B]" />
-              </button>
+              </a>
 
               <div className="flex items-center justify-center gap-3 text-[11px] text-neutral-600 pt-1">
                 <span className="flex items-center gap-1 font-medium text-[#16382B]">

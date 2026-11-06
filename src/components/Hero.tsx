@@ -2,10 +2,13 @@ import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 interface HeroProps {
-  onCtaClick: () => void;
+  onCtaClick?: () => void;
+  checkoutUrl?: string;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
+export const Hero: React.FC<HeroProps> = ({ onCtaClick, checkoutUrl }) => {
+  const checkoutLink = checkoutUrl || 'https://pay.kiwify.com.br/vHParcm';
+
   return (
     <section id="inicio" className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-gradient-to-b from-[#FAF8F5] via-[#FAF8F5] to-[#F3EFE7]">
       {/* Subtle ambient glow */}
@@ -36,13 +39,15 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
             {/* CTA Block */}
             <div className="pt-2 space-y-3">
-              <button
-                onClick={onCtaClick}
+              <a
+                href={checkoutLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#16382B] hover:bg-[#1f4e3c] text-white text-sm sm:text-base font-bold tracking-wide rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 group cursor-pointer"
               >
                 <span>Quero acesso agora — R$ 17</span>
                 <span className="text-[#D8AF3B] text-lg font-bold group-hover:translate-x-1 transition-transform inline-block">→</span>
-              </button>
+              </a>
 
               {/* Sub-CTA text: 100 receitas | 21 dias de planejamento | 4 bônus. */}
               <p className="text-xs sm:text-sm font-medium text-neutral-600 tracking-wide">

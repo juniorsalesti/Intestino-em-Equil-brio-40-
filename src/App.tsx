@@ -20,14 +20,14 @@ import { OfferSettings } from './types';
 const STORAGE_KEY = 'intestino_equilibrio_settings_v3';
 
 const DEFAULT_SETTINGS: OfferSettings = {
-  checkoutUrl: '',
+  checkoutUrl: 'https://pay.kiwify.com.br/vHParcm',
   priceFull: 'R$ 27,00',
   priceInstallments: 'ou 3x de R$ 9,62',
   guaranteeDays: 7,
   guaranteeConditionText:
     'Se por qualquer motivo você considerar que o material não atendeu às suas expectativas, poderá solicitar o reembolso integral diretamente na plataforma de pagamento, conforme a política oficial do vendedor.',
-  checkoutUrlOffer1: '',
-  checkoutUrlOffer2: '',
+  checkoutUrlOffer1: 'https://pay.kiwify.com.br/vHParcm',
+  checkoutUrlOffer2: 'https://pay.kiwify.com.br/21iqdr2',
   priceOffer1: 17,
   referencePriceOffer1: null,
   priceOffer2: 27,
@@ -43,7 +43,13 @@ export default function App() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        setSettings({ ...DEFAULT_SETTINGS, ...JSON.parse(saved) });
+        const parsed = JSON.parse(saved);
+        setSettings({
+          ...DEFAULT_SETTINGS,
+          ...parsed,
+          checkoutUrlOffer1: parsed.checkoutUrlOffer1 || DEFAULT_SETTINGS.checkoutUrlOffer1,
+          checkoutUrlOffer2: parsed.checkoutUrlOffer2 || DEFAULT_SETTINGS.checkoutUrlOffer2,
+        });
       }
     } catch {
       // Fallback to default
@@ -94,7 +100,10 @@ export default function App() {
 
       <main>
         {/* SEÇÃO 1 — HERO: A DOR E A SOLUÇÃO */}
-        <Hero onCtaClick={handleCtaClick} />
+        <Hero
+          onCtaClick={handleCtaClick}
+          checkoutUrl={settings.checkoutUrlOffer1 || 'https://pay.kiwify.com.br/vHParcm'}
+        />
 
         {/* SEÇÃO 2 — IDENTIFICAÇÃO COM A DOR */}
         <PainSection onCtaClick={handleCtaClick} />

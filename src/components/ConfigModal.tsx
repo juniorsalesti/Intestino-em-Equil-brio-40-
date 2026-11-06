@@ -15,9 +15,9 @@ export const ConfigModal: React.FC<ConfigModalProps> = ({
   settings,
   onSave,
 }) => {
-  const [checkoutUrl, setCheckoutUrl] = useState(settings.checkoutUrl || '');
-  const [checkoutUrlOffer1, setCheckoutUrlOffer1] = useState(settings.checkoutUrlOffer1 || '');
-  const [checkoutUrlOffer2, setCheckoutUrlOffer2] = useState(settings.checkoutUrlOffer2 || '');
+  const [checkoutUrl, setCheckoutUrl] = useState(settings.checkoutUrl || 'https://pay.kiwify.com.br/vHParcm');
+  const [checkoutUrlOffer1, setCheckoutUrlOffer1] = useState(settings.checkoutUrlOffer1 || 'https://pay.kiwify.com.br/vHParcm');
+  const [checkoutUrlOffer2, setCheckoutUrlOffer2] = useState(settings.checkoutUrlOffer2 || 'https://pay.kiwify.com.br/21iqdr2');
   
   const [priceOffer1, setPriceOffer1] = useState(settings.priceOffer1 || 17);
   const [referencePriceOffer1, setReferencePriceOffer1] = useState<string>(
