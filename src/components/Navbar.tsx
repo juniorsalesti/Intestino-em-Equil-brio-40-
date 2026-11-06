@@ -20,10 +20,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConfig, onCtaClick }) => {
 
   const navLinks = [
     { label: 'A Jornada 21 Dias', href: '#jornada' },
-    { label: 'O Material', href: '#produto' },
+    { label: 'O Que Você Recebe', href: '#conteudo' },
     { label: '4 Bônus', href: '#bonus' },
-    { label: 'Opções de Acesso', href: '#planos' },
-    { label: 'Sobre Vicente', href: '#sobre' },
+    { label: 'Oferta', href: '#planos' },
     { label: 'Dúvidas', href: '#faq' },
   ];
 

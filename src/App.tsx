@@ -7,19 +7,11 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { PainSection } from './components/PainSection';
-import { WhyDietFails } from './components/WhyDietFails';
 import { CalendarSection } from './components/CalendarSection';
-import { ProductOverview } from './components/ProductOverview';
-import { ChaptersSection } from './components/ChaptersSection';
-import { RecipeStructure } from './components/RecipeStructure';
+import { WhatYouGetSection } from './components/WhatYouGetSection';
 import { BonusSection } from './components/BonusSection';
-import { AboutVicente } from './components/AboutVicente';
-import { DesiredBenefits } from './components/DesiredBenefits';
-import { OfferSection } from './components/OfferSection';
 import { PricingSection } from './components/PricingSection';
-import { GuaranteeSection } from './components/GuaranteeSection';
-import { FaqSection } from './components/FaqSection';
-import { FinalCta } from './components/FinalCta';
+import { SafetyAndFinalSection } from './components/SafetyAndFinalSection';
 import { Footer } from './components/Footer';
 import { MobileStickyBar } from './components/MobileStickyBar';
 import { ConfigModal } from './components/ConfigModal';
@@ -68,7 +60,7 @@ export default function App() {
   };
 
   const handleCtaClick = () => {
-    const plansElement = document.getElementById('planos') || document.getElementById('oferta');
+    const plansElement = document.getElementById('planos');
     if (plansElement) {
       plansElement.scrollIntoView({ behavior: 'smooth' });
     }
@@ -94,51 +86,29 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#242E28] font-sans antialiased selection:bg-[#C59B27]/20 selection:text-[#16382B]">
-      {/* 3-Zone Top Navigation Bar */}
+      {/* Top Navigation Bar */}
       <Navbar
         onOpenConfig={() => setIsConfigOpen(true)}
         onCtaClick={handleCtaClick}
       />
 
       <main>
-        {/* 1. Nova Primeira Dobra — Hero Emocional & Direto */}
+        {/* SEÇÃO 1 — HERO: A DOR E A SOLUÇÃO */}
         <Hero onCtaClick={handleCtaClick} />
 
-        {/* 2. Seção de Identificação com a Dor (Barriga inchada, intestino irregular, etc.) */}
+        {/* SEÇÃO 2 — IDENTIFICAÇÃO COM A DOR */}
         <PainSection onCtaClick={handleCtaClick} />
 
-        {/* 3. Seção — O Problema Não É Apenas Saber o que Comer */}
-        <WhyDietFails onCtaClick={handleCtaClick} />
-
-        {/* 4. Seção Principal — A Jornada de 21 Dias (3 Etapas) */}
+        {/* SEÇÃO 3 — A JORNADA DE 21 DIAS */}
         <CalendarSection onCtaClick={handleCtaClick} />
 
-        {/* 5. Apresentação do Produto como Solução (Mais do que receitas) */}
-        <ProductOverview onCtaClick={handleCtaClick} />
+        {/* SEÇÃO 4 — O QUE VOCÊ RECEBE */}
+        <WhatYouGetSection onCtaClick={handleCtaClick} />
 
-        {/* 6. Apresentação dos 7 Capítulos (O mecanismo prático com comida de verdade) */}
-        <ChaptersSection />
-
-        {/* 7. O Que Cada Receita Oferece (Didática, Rendimento, Dica do Vicente) */}
-        <RecipeStructure />
-
-        {/* 8. Não é Só Um Cardápio — 4 Bônus Exclusivos de Suporte */}
+        {/* SEÇÃO 5 — OS 4 BÔNUS */}
         <BonusSection onCtaClick={handleCtaClick} />
 
-        {/* 9. Apresentação do Vicente Valença (Abordagem simples, acolhedora e prática) */}
-        <AboutVicente />
-
-        {/* 10. Seção de Benefícios Desejados (Objetivos e possibilidades reais) */}
-        <DesiredBenefits onCtaClick={handleCtaClick} />
-
-        {/* 11. Seção de Oferta (Pacote completo + campos editáveis) */}
-        <OfferSection
-          settings={settings}
-          onOpenConfig={() => setIsConfigOpen(true)}
-          onCtaClick={handleCtaClick}
-        />
-
-        {/* 11.1 Nova Seção de Ofertas Comparativas (Escolha como levar para sua cozinha) */}
+        {/* SEÇÃO 6 — OFERTA */}
         <PricingSection
           settings={settings}
           onSelectOffer1={handleSelectOffer1}
@@ -146,20 +116,14 @@ export default function App() {
           onOpenConfig={() => setIsConfigOpen(true)}
         />
 
-        {/* 12. Garantia (Conheça o material com tranquilidade) */}
-        <GuaranteeSection
+        {/* SEÇÃO 7 — SEGURANÇA E FINALIZAÇÃO */}
+        <SafetyAndFinalSection
           settings={settings}
-          onOpenConfig={() => setIsConfigOpen(true)}
+          onCtaClick={handleCtaClick}
         />
-
-        {/* 13. Perguntas Frequentes (FAQ Accordion com as 9 perguntas) */}
-        <FaqSection />
-
-        {/* 14. CTA Final (Você pode continuar improvisando ou começar uma nova rotina) */}
-        <FinalCta onCtaClick={handleCtaClick} />
       </main>
 
-      {/* 15. Rodapé & Aviso Legal */}
+      {/* Rodapé & Aviso Legal */}
       <Footer onOpenConfig={() => setIsConfigOpen(true)} />
 
       {/* Barra de Compra Fixa no Celular */}

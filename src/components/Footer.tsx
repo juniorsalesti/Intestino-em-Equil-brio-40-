@@ -24,12 +24,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConfig }) => {
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-cream-200/70">
             <a href="#inicio" className="hover:text-white transition-colors">Início</a>
+            <a href="#dor" className="hover:text-white transition-colors">Identificação</a>
             <a href="#jornada" className="hover:text-white transition-colors">A Jornada</a>
-            <a href="#produto" className="hover:text-white transition-colors">O Material</a>
-            <a href="#capitulos" className="hover:text-white transition-colors">7 Capítulos</a>
+            <a href="#conteudo" className="hover:text-white transition-colors">O Que Você Recebe</a>
             <a href="#bonus" className="hover:text-white transition-colors">4 Bônus</a>
-            <a href="#sobre" className="hover:text-white transition-colors">Sobre Vicente</a>
-            <a href="#oferta" className="hover:text-white transition-colors">Oferta</a>
+            <a href="#planos" className="hover:text-white transition-colors">Oferta</a>
             <a href="#faq" className="hover:text-white transition-colors">Dúvidas</a>
             <button
               onClick={onOpenConfig}

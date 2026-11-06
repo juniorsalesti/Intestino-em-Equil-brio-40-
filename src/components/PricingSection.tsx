@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Sparkles, ArrowRight, ShieldCheck, Lock, Smartphone, Download, Star, Edit3 } from 'lucide-react';
+import { Check, Star, ArrowRight, ShieldCheck, Lock, Smartphone, Download, Edit3, Sparkles } from 'lucide-react';
 import { OfferSettings } from '../types';
 
 interface PricingSectionProps {
@@ -33,14 +33,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
 
   return (
     <section id="planos" className="py-20 md:py-28 bg-[#FAF8F5] relative overflow-hidden">
-      {/* Decorative ambient subtle background touches */}
+      {/* Decorative ambient lights */}
       <div className="absolute top-10 right-0 w-96 h-96 bg-[#C59B27]/8 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 -left-12 w-96 h-96 bg-[#16382B]/6 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#C59B27] bg-[#C59B27]/10 px-3.5 py-1.5 rounded-full">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Opções de Acesso</span>
@@ -59,10 +59,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
           <div className="pt-1 flex justify-center">
             <button
               onClick={onOpenConfig}
-              className="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-[#16382B] transition-colors bg-white/70 px-3 py-1 rounded-full border border-neutral-200"
+              className="inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-[#16382B] transition-colors bg-white/70 px-3 py-1 rounded-full border border-neutral-200"
               title="Configurar links de checkout e preços de referência"
             >
-              <Edit3 className="w-3.5 h-3.5" />
+              <Edit3 className="w-3 h-3" />
               <span>Configurar Links de Checkout e Preços</span>
             </button>
           </div>
@@ -129,7 +129,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <span>
-                      <strong className="text-[#16382B]">Intestino em Equilíbrio 40+:</strong> eBook principal com 100 receitas e planejamento alimentar de 21 dias.
+                      <strong className="text-[#16382B]">Produto principal:</strong> 100 receitas práticas organizadas.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -137,7 +137,15 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <span>
-                      <strong className="text-[#16382B]">Bônus 4: Manhãs Leves</strong> — 15 cafés da manhã extras para variar sua rotina.
+                      <strong className="text-[#16382B]">Planejamento de 21 dias:</strong> roteiro diário estruturado.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-[#16382B]/10 text-[#16382B] flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <span>
+                      <strong className="text-[#16382B]">Bônus Manhãs Leves:</strong> 15 cafés da manhã extras.
                     </span>
                   </li>
                 </ul>
@@ -171,23 +179,23 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                 )}
 
                 <span className="text-[11px] text-neutral-500 block pt-0.5">
-                  Pagamento único · Acesso digital
+                  Pagamento único · Acesso digital imediato
                 </span>
               </div>
 
               {/* Action Button */}
               <button
                 onClick={onSelectOffer1}
-                className="w-full inline-flex items-center justify-center gap-2 py-4 px-5 bg-white hover:bg-neutral-50 text-[#16382B] text-xs sm:text-sm font-bold tracking-wide rounded-xl border-2 border-[#16382B] transition-all shadow-xs hover:shadow-md active:scale-98 cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-4 px-5 bg-white hover:bg-neutral-50 text-[#16382B] text-xs sm:text-sm font-bold tracking-wider uppercase rounded-xl border-2 border-[#16382B] transition-all shadow-xs hover:shadow-md active:scale-98 cursor-pointer"
               >
-                <span>Quero acesso agora — R$ {Math.round(settings.priceOffer1)}</span>
+                <span>QUERO LIVRO + BÔNUS</span>
                 <ArrowRight className="w-4 h-4 text-[#C59B27]" />
               </button>
 
               <div className="flex items-center justify-center gap-3 text-[11px] text-neutral-500 pt-1">
                 <span className="flex items-center gap-1">
                   <Smartphone className="w-3.5 h-3.5 text-[#16382B]" />
-                  Acesso em qualquer aparelho
+                  Qualquer aparelho
                 </span>
                 <span>·</span>
                 <span className="flex items-center gap-1">
@@ -212,7 +220,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               <div className="flex items-center justify-between pb-4 pt-1 border-b border-[#C59B27]/30">
                 <div>
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[#C59B27] block">
-                    Oferta 2 · A Escolha Recomendada
+                    Oferta 2 · Escolha Recomendada
                   </span>
                   <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#16382B]">
                     Pacote Completo
@@ -226,7 +234,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               {/* Destaque Visual Diferencial */}
               <div className="my-4 p-3 bg-[#16382B] text-white rounded-xl shadow-xs text-center space-y-0.5">
                 <span className="block text-xs sm:text-sm font-bold text-[#D8AF3B] tracking-wide">
-                  LEVE O PACOTE COMPLETO POR APENAS R$ {Math.round(priceDiff)} A MAIS.
+                  Por apenas R$ {Math.round(priceDiff)} a mais, leve os quatro bônus.
                 </span>
                 <span className="text-[11px] text-cream-200/80 block">
                   Você recebe o produto principal e os quatro bônus em um único pacote.
@@ -257,7 +265,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                     Tudo O Que Você Precisa
                   </span>
                   <p className="leading-snug text-neutral-600">
-                    O roteiro de 21 dias + o diário de acompanhamento + lista de mercado + guia de chás + manhãs leves.
+                    O produto principal com 100 receitas e os 4 materiais de suporte inclusos.
                   </p>
                 </div>
               </div>
@@ -267,13 +275,13 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                 <span className="text-xs font-bold uppercase tracking-wider text-[#16382B] block">
                   O que está incluído no pacote:
                 </span>
-                <ul className="space-y-2.5 text-xs sm:text-sm text-neutral-800">
+                <ul className="space-y-2 text-xs sm:text-sm text-neutral-800">
                   <li className="flex items-start gap-2.5">
                     <div className="w-4 h-4 rounded-full bg-[#16382B] text-[#D8AF3B] flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <span>
-                      <strong className="text-[#16382B]">Intestino em Equilíbrio 40+:</strong> 100 receitas e planejamento alimentar de 21 dias.
+                      <strong className="text-[#16382B]">Produto principal:</strong> 100 receitas e planejamento de 21 dias.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -281,7 +289,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <span>
-                      <strong className="text-[#16382B]">Bônus 1: Diário dos 21 Dias</strong> para registrar sensações e hábitos.
+                      <strong className="text-[#16382B]">Diário dos 21 Dias:</strong> acompanhamento e evolução diária.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -289,7 +297,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <span>
-                      <strong className="text-[#16382B]">Bônus 2: Lista de Mercado Inteligente</strong> para compras práticas sem desperdício.
+                      <strong className="text-[#16382B]">Lista de Mercado Inteligente:</strong> compras práticas sem desperdício.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -297,7 +305,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <span>
-                      <strong className="text-[#16382B]">Bônus 3: Guia dos Chás e Infusões</strong> com 15 preparações reconfortantes.
+                      <strong className="text-[#16382B]">Guia dos Chás e Infusões:</strong> 15 preparações aromáticas digestivas.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -305,7 +313,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <span>
-                      <strong className="text-[#16382B]">Bônus 4: Manhãs Leves</strong> — 15 cafés da manhã extras.
+                      <strong className="text-[#16382B]">Manhãs Leves:</strong> 15 cafés da manhã extras.
                     </span>
                   </li>
                 </ul>
@@ -348,7 +356,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                 onClick={onSelectOffer2}
                 className="w-full inline-flex items-center justify-center gap-2.5 py-4 px-6 bg-[#16382B] hover:bg-[#1f4e3c] text-white text-sm sm:text-base font-bold tracking-wider uppercase rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
-                <span>QUERO O PACOTE COMPLETO — R$ {Math.round(settings.priceOffer2)}</span>
+                <span>QUERO O PACOTE COMPLETO</span>
                 <ArrowRight className="w-5 h-5 text-[#D8AF3B]" />
               </button>
 
