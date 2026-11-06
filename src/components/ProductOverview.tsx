@@ -31,16 +31,22 @@ export const ProductOverview: React.FC<ProductOverviewProps> = ({ onCtaClick }) 
           <div className="lg:col-span-6">
             <div className="relative mx-auto max-w-md lg:max-w-none group">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-[#FCFBF9] transition-transform duration-500 group-hover:scale-[1.01]">
-                <img
-                  src="https://i.ibb.co/Rk5JDNqW/Mockup-do-Livro-Intestino-em-Equil-brio-40.png"
-                  alt="Mockup do Livro Intestino em Equilíbrio 40+"
-                  className="w-full h-auto object-contain aspect-4/3 p-2"
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/src/assets/images/ebook_cover_mockup_1793915827965.jpg';
-                  }}
-                />
+                <picture>
+                  <source srcSet="/images/mockup_livro.webp" type="image/webp" />
+                  <img
+                    src="/images/mockup_livro.webp"
+                    alt="Mockup do Livro Intestino em Equilíbrio 40+"
+                    className="w-full h-auto object-contain aspect-4/3 p-2"
+                    width={600}
+                    height={450}
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = 'https://i.ibb.co/Rk5JDNqW/Mockup-do-Livro-Intestino-em-Equil-brio-40.png';
+                    }}
+                  />
+                </picture>
                 
                 {/* Visual badge strip */}
                 <div className="p-4 bg-white border-t border-neutral-100 flex items-center justify-between text-xs">

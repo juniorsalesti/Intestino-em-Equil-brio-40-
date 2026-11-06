@@ -88,17 +88,24 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               
               {/* Photo of Vicente in warm kitchen */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
-                <img
-                  src="https://i.ibb.co/tpXt00Mm/Homem-sorrindo-com-livro-de-receitas-intestinais.png"
-                  alt="Vicente Valença sorrindo com livro de receitas intestinais"
-                  className="w-full h-auto object-cover aspect-4/3 sm:aspect-auto"
-                  loading="eager"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    // Fallback to local high-res hero asset if external link fails
-                    (e.currentTarget as HTMLImageElement).src = '/src/assets/images/vicente_hero_1793915827175.jpg';
-                  }}
-                />
+                <picture>
+                  <source srcSet="/images/hero_vicente.webp" type="image/webp" />
+                  <img
+                    src="/images/hero_vicente.webp"
+                    alt="Vicente Valença sorrindo com livro de receitas intestinais"
+                    className="w-full h-auto object-cover aspect-4/3 sm:aspect-auto"
+                    width={800}
+                    height={600}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      // Fallback to remote asset if needed
+                      (e.currentTarget as HTMLImageElement).src = 'https://i.ibb.co/tpXt00Mm/Homem-sorrindo-com-livro-de-receitas-intestinais.png';
+                    }}
+                  />
+                </picture>
                 
                 {/* Identification caption */}
                 <div className="p-3.5 bg-[#FCFBF9] border-t border-neutral-100 flex items-center justify-between text-xs">
@@ -115,15 +122,21 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               {/* Floating Product Mockup Card in foreground */}
               <div className="absolute -bottom-6 -left-4 sm:-left-6 w-44 sm:w-52 bg-white p-2.5 rounded-xl shadow-2xl border border-[#16382B]/15 hidden xs:block">
                 <div className="rounded-lg overflow-hidden border border-neutral-100 mb-1.5">
-                  <img
-                    src="https://i.ibb.co/Rk5JDNqW/Mockup-do-Livro-Intestino-em-Equil-brio-40.png"
-                    alt="Capa do eBook Intestino em Equilíbrio 40+"
-                    className="w-full h-auto object-contain aspect-4/3"
-                    loading="eager"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/src/assets/images/ebook_cover_mockup_1793915827965.jpg';
-                    }}
-                  />
+                  <picture>
+                    <source srcSet="/images/mockup_livro.webp" type="image/webp" />
+                    <img
+                      src="/images/mockup_livro.webp"
+                      alt="Capa do eBook Intestino em Equilíbrio 40+"
+                      className="w-full h-auto object-contain aspect-4/3"
+                      width={208}
+                      height={156}
+                      loading="eager"
+                      decoding="async"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = 'https://i.ibb.co/Rk5JDNqW/Mockup-do-Livro-Intestino-em-Equil-brio-40.png';
+                      }}
+                    />
+                  </picture>
                 </div>
                 <div className="text-center px-1">
                   <span className="block text-[10px] uppercase font-bold tracking-wider text-[#C59B27]">

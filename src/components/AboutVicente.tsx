@@ -11,16 +11,22 @@ export const AboutVicente: React.FC = () => {
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative max-w-md mx-auto">
               <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
-                <img
-                  src="https://i.ibb.co/8g2RxfKV/Whats-App-Image-2026-11-05-at-18-43-57.jpg"
-                  alt="Vicente Valença, apresentador do projeto Intestino em Equilíbrio 40+"
-                  className="w-full h-auto object-cover aspect-3/4"
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/src/assets/images/vicente_portrait_1793915827299.jpg';
-                  }}
-                />
+                <picture>
+                  <source srcSet="/images/apresentador_vicente.webp" type="image/webp" />
+                  <img
+                    src="/images/apresentador_vicente.webp"
+                    alt="Vicente Valença, apresentador do projeto Intestino em Equilíbrio 40+"
+                    className="w-full h-auto object-cover aspect-3/4"
+                    width={500}
+                    height={667}
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = 'https://i.ibb.co/8g2RxfKV/Whats-App-Image-2026-11-05-at-18-43-57.jpg';
+                    }}
+                  />
+                </picture>
                 
                 {/* Identification tag */}
                 <div className="p-4 bg-[#16382B] text-white">

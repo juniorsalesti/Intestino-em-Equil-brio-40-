@@ -92,15 +92,21 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               {/* Product Mockup Thumbnail */}
               <div className="my-5 p-3 bg-[#FAF8F5] rounded-2xl border border-neutral-200/60 flex items-center gap-4">
                 <div className="w-20 h-24 rounded-lg overflow-hidden shrink-0 border border-neutral-200 bg-white shadow-2xs">
-                  <img
-                    src="https://i.ibb.co/Rk5JDNqW/Mockup-do-Livro-Intestino-em-Equil-brio-40.png"
-                    alt="eBook Intestino em Equilíbrio 40+"
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/src/assets/images/ebook_cover_mockup_1793915827965.jpg';
-                    }}
-                  />
+                  <picture>
+                    <source srcSet="/images/mockup_livro.webp" type="image/webp" />
+                    <img
+                      src="/images/mockup_livro.webp"
+                      alt="eBook Intestino em Equilíbrio 40+"
+                      className="w-full h-full object-contain"
+                      width={80}
+                      height={96}
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = 'https://i.ibb.co/Rk5JDNqW/Mockup-do-Livro-Intestino-em-Equil-brio-40.png';
+                      }}
+                    />
+                  </picture>
                 </div>
                 <div className="text-xs text-neutral-600 space-y-1">
                   <span className="font-serif font-bold text-[#16382B] block text-sm">
@@ -230,15 +236,21 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               {/* Product Mockup Thumbnail Bundle */}
               <div className="mb-4 p-3 bg-white rounded-2xl border border-[#C59B27]/30 shadow-2xs flex items-center gap-4">
                 <div className="w-24 h-18 rounded-lg overflow-hidden shrink-0 border border-neutral-200 bg-neutral-50 shadow-2xs">
-                  <img
-                    src="https://i.ibb.co/yFB2Q5Bg/Cole-o-Verde-de-Bem-Estar.png"
-                    alt="Kit Completo com 4 Bônus"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/src/assets/images/bonus_bundle_mockup_1793915830065.jpg';
-                    }}
-                  />
+                  <picture>
+                    <source srcSet="/images/bundle_bonus.webp" type="image/webp" />
+                    <img
+                      src="/images/bundle_bonus.webp"
+                      alt="Kit Completo com 4 Bônus"
+                      className="w-full h-full object-cover"
+                      width={96}
+                      height={72}
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = 'https://i.ibb.co/yFB2Q5Bg/Cole-o-Verde-de-Bem-Estar.png';
+                      }}
+                    />
+                  </picture>
                 </div>
                 <div className="text-xs text-neutral-700 space-y-1">
                   <span className="font-serif font-bold text-[#16382B] block text-sm">

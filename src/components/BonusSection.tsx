@@ -94,16 +94,22 @@ export const BonusSection: React.FC<BonusSectionProps> = ({ onCtaClick }) => {
         {/* 3D Bundle Mockup Banner */}
         <div className="mb-14 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
           <div className="relative">
-            <img
-              src="https://i.ibb.co/yFB2Q5Bg/Cole-o-Verde-de-Bem-Estar.png"
-              alt="Coleção de Ferramentas e Bônus Intestino em Equilíbrio 40+"
-              className="w-full h-auto object-cover aspect-16/9 group-hover:scale-[1.01] transition-transform duration-700"
-              loading="lazy"
-              referrerPolicy="no-referrer"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = '/src/assets/images/bonus_bundle_mockup_1793915830065.jpg';
-              }}
-            />
+            <picture>
+              <source srcSet="/images/bundle_bonus.webp" type="image/webp" />
+              <img
+                src="/images/bundle_bonus.webp"
+                alt="Coleção de Ferramentas e Bônus Intestino em Equilíbrio 40+"
+                className="w-full h-auto object-cover aspect-16/9 group-hover:scale-[1.01] transition-transform duration-700"
+                width={900}
+                height={506}
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = 'https://i.ibb.co/yFB2Q5Bg/Cole-o-Verde-de-Bem-Estar.png';
+                }}
+              />
+            </picture>
             
             <div className="p-4 sm:p-5 bg-[#16382B] text-white flex flex-col sm:flex-row items-center justify-between gap-3">
               <div className="flex items-center gap-3">

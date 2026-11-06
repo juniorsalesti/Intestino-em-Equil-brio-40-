@@ -100,13 +100,22 @@ export const ChaptersSection: React.FC = () => {
         <div className="mb-14 rounded-2xl overflow-hidden shadow-lg border border-white bg-white">
           <div className="grid grid-cols-1 md:grid-cols-12 items-center">
             <div className="md:col-span-7 h-64 sm:h-72 lg:h-80 overflow-hidden">
-              <img
-                src="/src/assets/images/healthy_dishes_recipes_1793915829137.jpg"
-                alt="Variedade de preparações e pratos naturais do eBook"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-              />
+              <picture>
+                <source srcSet="/images/pratos_receitas.webp" type="image/webp" />
+                <img
+                  src="/images/pratos_receitas.webp"
+                  alt="Variedade de preparações e pratos naturais do eBook"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  width={700}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/src/assets/images/healthy_dishes_recipes_1793915829137.jpg';
+                  }}
+                />
+              </picture>
             </div>
             <div className="md:col-span-5 p-6 sm:p-8 space-y-3 bg-[#FCFBF9]">
               <span className="text-xs uppercase tracking-widest text-[#C59B27] font-semibold block">
